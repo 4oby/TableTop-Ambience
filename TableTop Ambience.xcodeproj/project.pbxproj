@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA62B0001D6AFCA40053AC14 /* Sound in Resources */ = {isa = PBXBuildFile; fileRef = DA62AFFF1D6AFCA40053AC14 /* Sound */; };
 		DA936EF51D6722320047C2BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936EF41D6722320047C2BC /* AppDelegate.swift */; };
 		DA936EF71D6722320047C2BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936EF61D6722320047C2BC /* ViewController.swift */; };
 		DA936EFA1D6722320047C2BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA936EF81D6722320047C2BC /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA62AFFF1D6AFCA40053AC14 /* Sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sound; sourceTree = "<group>"; };
 		DA936EF11D6722320047C2BC /* TableTop Ambience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TableTop Ambience.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA936EF41D6722320047C2BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA936EF61D6722320047C2BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				DA936EFB1D6722320047C2BC /* Assets.xcassets */,
 				DA936EFD1D6722320047C2BC /* LaunchScreen.storyboard */,
 				DA936F001D6722320047C2BC /* Info.plist */,
+				DA62AFFF1D6AFCA40053AC14 /* Sound */,
 			);
 			path = "TableTop Ambience";
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			files = (
 				DA936EFF1D6722320047C2BC /* LaunchScreen.storyboard in Resources */,
 				DA936EFC1D6722320047C2BC /* Assets.xcassets in Resources */,
+				DA62B0001D6AFCA40053AC14 /* Sound in Resources */,
 				DA936EFA1D6722320047C2BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +306,7 @@
 				DA936F051D6722320047C2BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
