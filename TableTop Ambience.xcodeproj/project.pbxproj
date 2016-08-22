@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA62B0001D6AFCA40053AC14 /* Sound in Resources */ = {isa = PBXBuildFile; fileRef = DA62AFFF1D6AFCA40053AC14 /* Sound */; };
+		DA62B0031D6B0A870053AC14 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA62B0021D6B0A870053AC14 /* SoundManager.swift */; };
+		DA62B0161D6B19B10053AC14 /* Sound in Resources */ = {isa = PBXBuildFile; fileRef = DA62B0151D6B19B10053AC14 /* Sound */; };
 		DA936EF51D6722320047C2BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936EF41D6722320047C2BC /* AppDelegate.swift */; };
 		DA936EF71D6722320047C2BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936EF61D6722320047C2BC /* ViewController.swift */; };
 		DA936EFA1D6722320047C2BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA936EF81D6722320047C2BC /* Main.storyboard */; };
@@ -16,7 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA62AFFF1D6AFCA40053AC14 /* Sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sound; sourceTree = "<group>"; };
+		DA62B0021D6B0A870053AC14 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		DA62B0151D6B19B10053AC14 /* Sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sound; sourceTree = "<group>"; };
 		DA936EF11D6722320047C2BC /* TableTop Ambience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TableTop Ambience.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA936EF41D6722320047C2BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA936EF61D6722320047C2BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA62B0011D6B09DB0053AC14 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DA936EF81D6722320047C2BC /* Main.storyboard */,
+				DA936EFD1D6722320047C2BC /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		DA936EE81D6722320047C2BC = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +69,11 @@
 			children = (
 				DA936EF41D6722320047C2BC /* AppDelegate.swift */,
 				DA936EF61D6722320047C2BC /* ViewController.swift */,
-				DA936EF81D6722320047C2BC /* Main.storyboard */,
+				DA62B0011D6B09DB0053AC14 /* UI */,
+				DA62B0021D6B0A870053AC14 /* SoundManager.swift */,
 				DA936EFB1D6722320047C2BC /* Assets.xcassets */,
-				DA936EFD1D6722320047C2BC /* LaunchScreen.storyboard */,
 				DA936F001D6722320047C2BC /* Info.plist */,
-				DA62AFFF1D6AFCA40053AC14 /* Sound */,
+				DA62B0151D6B19B10053AC14 /* Sound */,
 			);
 			path = "TableTop Ambience";
 			sourceTree = "<group>";
@@ -129,7 +140,7 @@
 			files = (
 				DA936EFF1D6722320047C2BC /* LaunchScreen.storyboard in Resources */,
 				DA936EFC1D6722320047C2BC /* Assets.xcassets in Resources */,
-				DA62B0001D6AFCA40053AC14 /* Sound in Resources */,
+				DA62B0161D6B19B10053AC14 /* Sound in Resources */,
 				DA936EFA1D6722320047C2BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +154,7 @@
 			files = (
 				DA936EF71D6722320047C2BC /* ViewController.swift in Sources */,
 				DA936EF51D6722320047C2BC /* AppDelegate.swift in Sources */,
+				DA62B0031D6B0A870053AC14 /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
