@@ -7,9 +7,15 @@
 //
 
 import UIKit
+protocol SoundPadCellDelegate: class {
+    
+    func playStopButtonPressed(_ sender: AnyObject)
+    func repeatButtonPressed(_ sender: AnyObject)
+    func volumeSliderValueChanged(_ sender: AnyObject)
+}
+
 
 class SoundPadCell: UICollectionViewCell {
-    
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet var playStopButton: UIButton!
@@ -17,16 +23,35 @@ class SoundPadCell: UICollectionViewCell {
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var iconImage: UIImageView!
     
+    weak var delegate: SoundPadCellDelegate?
+    
     @IBAction func playStopButtonPressed(_ sender: AnyObject) {
-        print("func\(#function)")
+        
+        if playStopButton.backgroundImage(for: .normal) == #imageLiteral(resourceName: "Play-96") {
+            playStopButton.setBackgroundImage(#imageLiteral(resourceName: "Stop-96"), for: .normal)
+        }else {
+            playStopButton.setBackgroundImage(#imageLiteral(resourceName: "Play-96"), for: .normal)
+        }
+        
+        delegate?.playStopButtonPressed(sender)
+       // print("func\(#function)")
     }
     
-    @IBAction func secondButtonPressed(_ sender: AnyObject) {
-        print("func\(#function)")
+    @IBAction func repeatButtonPressed(_ sender: AnyObject) {
+        if repeatButton.backgroundImage(for: .normal) == #imageLiteral(resourceName: "Repeat-96") {
+            repeatButton.setBackgroundImage(#imageLiteral(resourceName: "Repeat-96-highlight"), for: .normal)
+        }else {
+            repeatButton.setBackgroundImage(#imageLiteral(resourceName: "Repeat-96"), for: .normal)
+        }
+        
+        delegate?.repeatButtonPressed(sender)
+      //  print("func\(#function)")
     }
-
+    
     @IBAction func volumeSliderValueChanged(_ sender: AnyObject) {
-        print("func\(#function)")
+        delegate?.volumeSliderValueChanged(sender)
+       // print("func\(#function)")
     }
     
-  }
+}
+//TODO: Change the playButton icon to play, when file finished playing and autorepeat is off
