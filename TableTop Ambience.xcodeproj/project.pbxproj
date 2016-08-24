@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		DA62B0031D6B0A870053AC14 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA62B0021D6B0A870053AC14 /* SoundManager.swift */; };
 		DA62B0161D6B19B10053AC14 /* Sound in Resources */ = {isa = PBXBuildFile; fileRef = DA62B0151D6B19B10053AC14 /* Sound */; };
-		DA87C38E1D6C895B0082D11F /* SoudPadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C38D1D6C895B0082D11F /* SoudPadItem.swift */; };
+		DA8242631D6DE6DE00DA47CF /* SoundFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8242621D6DE6DE00DA47CF /* SoundFlow.swift */; };
+		DA87C38E1D6C895B0082D11F /* SoundPadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C38D1D6C895B0082D11F /* SoundPadItem.swift */; };
 		DA936EF51D6722320047C2BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936EF41D6722320047C2BC /* AppDelegate.swift */; };
 		DA936EF71D6722320047C2BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936EF61D6722320047C2BC /* ViewController.swift */; };
 		DA936EFA1D6722320047C2BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA936EF81D6722320047C2BC /* Main.storyboard */; };
@@ -21,7 +22,8 @@
 /* Begin PBXFileReference section */
 		DA62B0021D6B0A870053AC14 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		DA62B0151D6B19B10053AC14 /* Sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sound; sourceTree = "<group>"; };
-		DA87C38D1D6C895B0082D11F /* SoudPadItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoudPadItem.swift; sourceTree = "<group>"; };
+		DA8242621D6DE6DE00DA47CF /* SoundFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFlow.swift; sourceTree = "<group>"; };
+		DA87C38D1D6C895B0082D11F /* SoundPadItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPadItem.swift; sourceTree = "<group>"; };
 		DA936EF11D6722320047C2BC /* TableTop Ambience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TableTop Ambience.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA936EF41D6722320047C2BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA936EF61D6722320047C2BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				DA9866BB1D6C67CE00ACFB55 /* SoundPadCell.swift */,
-				DA87C38D1D6C895B0082D11F /* SoudPadItem.swift */,
+				DA87C38D1D6C895B0082D11F /* SoundPadItem.swift */,
+				DA8242621D6DE6DE00DA47CF /* SoundFlow.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,8 +172,9 @@
 				DA936EF71D6722320047C2BC /* ViewController.swift in Sources */,
 				DA936EF51D6722320047C2BC /* AppDelegate.swift in Sources */,
 				DA62B0031D6B0A870053AC14 /* SoundManager.swift in Sources */,
+				DA8242631D6DE6DE00DA47CF /* SoundFlow.swift in Sources */,
 				DA9866BC1D6C67CE00ACFB55 /* SoundPadCell.swift in Sources */,
-				DA87C38E1D6C895B0082D11F /* SoudPadItem.swift in Sources */,
+				DA87C38E1D6C895B0082D11F /* SoundPadItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
