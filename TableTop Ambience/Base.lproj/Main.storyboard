@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-646" y="173"/>
         </scene>
-        <!--View Controller-->
+        <!--ActiveSoundPad-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableTop_Ambience" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,10 +88,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chw-nm-Yfn">
+                                                    <frame key="frameInset" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" backgroundImage="deleteButton"/>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="deleteButton" destination="chw-nm-Yfn" id="5hl-zB-OEY"/>
                                             <outlet property="iconImage" destination="XT1-yB-Rqz" id="s6d-YA-dV4"/>
                                             <outlet property="playStopButton" destination="mzO-nK-qW9" id="wK2-jB-onX"/>
                                             <outlet property="repeatButton" destination="b6n-Hq-Xre" id="AfG-25-Jrh"/>
@@ -107,20 +113,28 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hNb-FS-Z4f"/>
+                    <navigationItem key="navigationItem" title="ActiveSoundPad" id="mUp-61-hcF">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="USb-bm-WkE">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="BYZ-38-t0r" id="HkZ-gg-iSJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="mxR-hu-fLo" id="J4A-yF-Zyd"/>
+                        <outlet property="editButton" destination="USb-bm-WkE" id="JZg-rn-f8j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="172"/>
+            <point key="canvasLocation" x="141.59999999999999" y="171.36431784107947"/>
         </scene>
     </scenes>
     <resources>
         <image name="Play-96" width="96" height="96"/>
         <image name="Play-96-highlight" width="96" height="96"/>
         <image name="Repeat-96" width="96" height="96"/>
+        <image name="deleteButton" width="256" height="256"/>
         <image name="iconWater" width="40" height="40"/>
     </resources>
 </document>

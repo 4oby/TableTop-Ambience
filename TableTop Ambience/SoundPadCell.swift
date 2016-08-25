@@ -18,10 +18,11 @@ protocol SoundPadCellDelegate: class {
 class SoundPadCell: UICollectionViewCell {
     
     @IBOutlet weak var title: UILabel!
-    @IBOutlet var playStopButton: UIButton!
+    @IBOutlet weak var playStopButton: UIButton!
     @IBOutlet weak var repeatButton: UIButton!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var deleteButton: UIButton!
     
     weak var delegate: SoundPadCellDelegate?
     
