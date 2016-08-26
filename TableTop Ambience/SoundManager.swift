@@ -46,4 +46,8 @@ extension SoundManager {
         
         return soundList[category.hashValue]
     }
+    
+    func getSoundListForCategory(number: Int) -> [String]? {
+        return soundList[number]
+    }
 }

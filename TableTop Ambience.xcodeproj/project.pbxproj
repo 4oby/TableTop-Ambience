@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA5EC1F91D7085C900A759C6 /* SoundPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EC1F81D7085C900A759C6 /* SoundPicker.swift */; };
 		DA62B0031D6B0A870053AC14 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA62B0021D6B0A870053AC14 /* SoundManager.swift */; };
 		DA62B0161D6B19B10053AC14 /* Sound in Resources */ = {isa = PBXBuildFile; fileRef = DA62B0151D6B19B10053AC14 /* Sound */; };
 		DA8242631D6DE6DE00DA47CF /* SoundFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8242621D6DE6DE00DA47CF /* SoundFlow.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA5EC1F81D7085C900A759C6 /* SoundPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPicker.swift; sourceTree = "<group>"; };
 		DA62B0021D6B0A870053AC14 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		DA62B0151D6B19B10053AC14 /* Sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sound; sourceTree = "<group>"; };
 		DA8242621D6DE6DE00DA47CF /* SoundFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFlow.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				DA9866BB1D6C67CE00ACFB55 /* SoundPadCell.swift */,
 				DA87C38D1D6C895B0082D11F /* SoundPadItem.swift */,
 				DA8242621D6DE6DE00DA47CF /* SoundFlow.swift */,
+				DA5EC1F81D7085C900A759C6 /* SoundPicker.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				DA62B0031D6B0A870053AC14 /* SoundManager.swift in Sources */,
 				DA8242631D6DE6DE00DA47CF /* SoundFlow.swift in Sources */,
 				DA9866BC1D6C67CE00ACFB55 /* SoundPadCell.swift in Sources */,
+				DA5EC1F91D7085C900A759C6 /* SoundPicker.swift in Sources */,
 				DA87C38E1D6C895B0082D11F /* SoundPadItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

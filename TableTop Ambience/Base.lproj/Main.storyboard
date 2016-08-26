@@ -114,6 +114,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="ActiveSoundPad" id="mUp-61-hcF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="IYQ-Ys-Hgc">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="Gt0-8v-OYO"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="USb-bm-WkE">
                             <connections>
                                 <action selector="editButtonTapped:" destination="BYZ-38-t0r" id="HkZ-gg-iSJ"/>
@@ -121,6 +126,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="IYQ-Ys-Hgc" id="LgM-HE-EHj"/>
                         <outlet property="collectionView" destination="mxR-hu-fLo" id="J4A-yF-Zyd"/>
                         <outlet property="editButton" destination="USb-bm-WkE" id="JZg-rn-f8j"/>
                     </connections>
