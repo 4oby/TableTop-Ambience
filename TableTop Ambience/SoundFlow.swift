@@ -9,10 +9,16 @@
 import Foundation
 import AVFoundation
 
+protocol SoundFlowDelegate: class{
+    func didStopAudioSession(_ sender: SoundFlow)
+}
+
 
 class SoundFlow: NSObject {
-    let baseItem: SoundPadItem
+    var baseItem: SoundPadItem
     let audioSession: AVAudioPlayer
+    
+    weak var delegate: SoundFlowDelegate?
     
     init(baseItem: SoundPadItem) {
         self.baseItem = baseItem
@@ -23,15 +29,14 @@ class SoundFlow: NSObject {
             print(error)
             self.audioSession = AVAudioPlayer()
         }
-        
     }
 }
 
 extension SoundFlow: SoundPadCellDelegate {
     
     func playStopButtonPressed(_ sender: AnyObject){
-    //    print("func\(#function)")
-       // print(sender)
+        
+        audioSession.delegate = self
         
         if audioSession.isPlaying {
             audioSession.stop()
@@ -42,18 +47,25 @@ extension SoundFlow: SoundPadCellDelegate {
     
     func repeatButtonPressed(_ sender: AnyObject){ //FIXME: if autorepeat is turned off while the file is playing, it won't stop
         if baseItem.autoRepeat {
-
-          //  baseItem.autoRepeat = false //reinit whole thing with new baseItem
+            
             audioSession.numberOfLoops = 1
         }else {
-            //reverse baseItem.autoRepeat
+            
+            baseItem = baseItem.setAutoRepeat(autoRepeat: true)
             audioSession.numberOfLoops = -666 //any negative will do
         }
+        
+        baseItem = baseItem.setAutoRepeat(autoRepeat: !baseItem.autoRepeat)
     }
     
     func volumeSliderValueChanged(_ sender: AnyObject){
-       // print("func\(#function)")
-       // print(sender)
         audioSession.volume = sender.value
+        baseItem = baseItem.setVolume(volume: audioSession.volume)
+    }
+}
+
+extension SoundFlow: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        delegate?.didStopAudioSession(self)
     }
 }

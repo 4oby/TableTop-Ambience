@@ -35,7 +35,6 @@ class SoundPadCell: UICollectionViewCell {
         }
         
         delegate?.playStopButtonPressed(sender)
-       // print("func\(#function)")
     }
     
     @IBAction func repeatButtonPressed(_ sender: AnyObject) {
@@ -46,13 +45,15 @@ class SoundPadCell: UICollectionViewCell {
         }
         
         delegate?.repeatButtonPressed(sender)
-      //  print("func\(#function)")
     }
     
     @IBAction func volumeSliderValueChanged(_ sender: AnyObject) {
         delegate?.volumeSliderValueChanged(sender)
-       // print("func\(#function)")
     }
-    
 }
-//TODO: Change the playButton icon to play, when file finished playing and autorepeat is off
+
+extension SoundPadCell: SoundFlowDelegate{
+    func didStopAudioSession(_ sender: SoundFlow) {
+         playStopButton.setBackgroundImage(#imageLiteral(resourceName: "Play-96"), for: .normal)
+    }
+}

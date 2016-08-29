@@ -34,7 +34,7 @@ struct SoundPadItem {
         self.volume = dictionary["volume"] as? Float ?? 0.5
     }
     
-    init(fileAddress: String) { //Utility
+    init(fileAddress: String) { //utility init
         self.fileAddress = fileAddress
         self.icon = ""
         self.name = URL(fileURLWithPath: fileAddress).deletingPathExtension().lastPathComponent
@@ -44,6 +44,7 @@ struct SoundPadItem {
     
 }
 
+//MARK: - Saving Utility
 extension SoundPadItem {
     
     func encode() -> Dictionary<String, Any> {
@@ -57,3 +58,25 @@ extension SoundPadItem {
         return dictionary
     }
 }
+
+
+//MARK: - Editing Utility
+extension SoundPadItem {
+
+    func setVolume(volume: Float) -> SoundPadItem {
+        return SoundPadItem(fileAddress: self.fileAddress,
+                            icon: self.icon,
+                            name: self.name,
+                            autoRepeat: self.autoRepeat,
+                            volume: volume)
+    }
+    
+    func setAutoRepeat(autoRepeat: Bool) -> SoundPadItem {
+        return SoundPadItem(fileAddress: self.fileAddress,
+                            icon: self.icon,
+                            name: self.name,
+                            autoRepeat: autoRepeat,
+                            volume: self.volume)
+    }
+}
+

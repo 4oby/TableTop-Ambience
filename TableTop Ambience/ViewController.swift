@@ -94,6 +94,7 @@ extension ViewController: UICollectionViewDataSource {
         cell.delegate = currentSoundPad[indexPath.row]
         cell.playStopButton.tag = indexPath.row
         cell.deleteButton.tag = indexPath.row
+        currentSoundPad[indexPath.row].delegate = cell
         
         if currentSoundPad[indexPath.row].baseItem.autoRepeat {
             //FIXME: find a better solution, changing cells here sucks
