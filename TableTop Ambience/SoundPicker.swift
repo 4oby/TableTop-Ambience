@@ -46,7 +46,6 @@ class SoundPicker: NSObject {
                                             preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: .cancel) { (action) in
-                                            self.delegate?.soundPickerDidSelect(nil)
         }
         alertController?.addAction(cancelAction)
     }
