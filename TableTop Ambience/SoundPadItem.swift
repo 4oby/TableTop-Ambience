@@ -33,6 +33,15 @@ struct SoundPadItem {
         self.autoRepeat = dictionary["autoRepeat"] as? Bool ?? false
         self.volume = dictionary["volume"] as? Float ?? 0.5
     }
+    
+    init(fileAddress: String) { //Utility
+        self.fileAddress = fileAddress
+        self.icon = ""
+        self.name = URL(fileURLWithPath: fileAddress).deletingPathExtension().lastPathComponent
+        self.autoRepeat = false
+        self.volume = 0.5
+    }
+    
 }
 
 extension SoundPadItem {
