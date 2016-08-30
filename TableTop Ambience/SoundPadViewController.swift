@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class SoundPadViewController: UIViewController {
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet var addButton: UIBarButtonItem!
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: - InternalFunctions
-extension ViewController{
+extension SoundPadViewController{
     
     func removeCell(_ sender: AnyObject) {
         //!!!: I don't like this being here, there must be another way
@@ -83,7 +83,7 @@ extension ViewController{
 }
 
 //MARK: - SoundPickerDelegate
-extension ViewController: SoudPickerDelegate {
+extension SoundPadViewController: SoudPickerDelegate {
     
     func soundPickerDidSelect(_ sound: String?) {
 
@@ -94,7 +94,7 @@ extension ViewController: SoudPickerDelegate {
 
 
 //MARK: - CollectionViewDataSource
-extension ViewController: UICollectionViewDataSource {
+extension SoundPadViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         

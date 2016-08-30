@@ -13,7 +13,7 @@
 		DA8242631D6DE6DE00DA47CF /* SoundFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8242621D6DE6DE00DA47CF /* SoundFlow.swift */; };
 		DA87C38E1D6C895B0082D11F /* SoundPadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C38D1D6C895B0082D11F /* SoundPadItem.swift */; };
 		DA936EF51D6722320047C2BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936EF41D6722320047C2BC /* AppDelegate.swift */; };
-		DA936EF71D6722320047C2BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936EF61D6722320047C2BC /* ViewController.swift */; };
+		DA936EF71D6722320047C2BC /* SoundPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936EF61D6722320047C2BC /* SoundPadViewController.swift */; };
 		DA936EFA1D6722320047C2BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA936EF81D6722320047C2BC /* Main.storyboard */; };
 		DA936EFC1D6722320047C2BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA936EFB1D6722320047C2BC /* Assets.xcassets */; };
 		DA936EFF1D6722320047C2BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA936EFD1D6722320047C2BC /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 		DA87C38D1D6C895B0082D11F /* SoundPadItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPadItem.swift; sourceTree = "<group>"; };
 		DA936EF11D6722320047C2BC /* TableTop Ambience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TableTop Ambience.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA936EF41D6722320047C2BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA936EF61D6722320047C2BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA936EF61D6722320047C2BC /* SoundPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPadViewController.swift; sourceTree = "<group>"; };
 		DA936EF91D6722320047C2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA936EFB1D6722320047C2BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA936EFE1D6722320047C2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				DA936EF41D6722320047C2BC /* AppDelegate.swift */,
-				DA936EF61D6722320047C2BC /* ViewController.swift */,
+				DA936EF61D6722320047C2BC /* SoundPadViewController.swift */,
 				DA62B0011D6B09DB0053AC14 /* UI */,
 				DA62B0021D6B0A870053AC14 /* SoundManager.swift */,
 				DA87C38C1D6C85000082D11F /* Supporting Files */,
@@ -172,7 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA936EF71D6722320047C2BC /* ViewController.swift in Sources */,
+				DA936EF71D6722320047C2BC /* SoundPadViewController.swift in Sources */,
 				DA936EF51D6722320047C2BC /* AppDelegate.swift in Sources */,
 				DA62B0031D6B0A870053AC14 /* SoundManager.swift in Sources */,
 				DA8242631D6DE6DE00DA47CF /* SoundFlow.swift in Sources */,
