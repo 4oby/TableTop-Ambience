@@ -19,17 +19,40 @@ class ViewController: UIViewController {
     var editModeEnabled = false
 
     
-    
-    //MARK: - Navigation bar's editButtonFunction
-
-    func deleteSoundPadCell(sender: UIButton) {
-        
-        let i: Int = (sender.layer.value(forKey: "index")) as? Int ?? 0
-        currentSoundPad.remove(at: i)
-        collectionView.reloadData()
-    }
+    //MARK: - Navigation bar actions
 
     @IBAction func editButtonTapped(_ sender: AnyObject) { //for some strange reason I cannot place this in an extension >_<
+        
+       toogleEditMode()
+    }
+    
+    @IBAction func addButtonTapped(_ sender: AnyObject) {
+
+        SoundPicker(self).delegate = self
+    }
+    
+    
+    //MARK: - ToolBarItemActions
+    
+    @IBAction func loadSoundPad(_ sender: AnyObject) {
+        loadASoundPad()
+    }
+    
+    @IBAction func saveSoundPad(_ sender: AnyObject) {
+        
+    }
+}
+
+//MARK: - InternalFunctions
+extension ViewController{
+    
+    func removeCell(_ sender: AnyObject) {
+        //!!!: I don't like this being here, there must be another way
+        currentSoundPad.remove(at: sender.tag)
+        collectionView.reloadData()
+    }
+    
+    func toogleEditMode() {
         
         if editModeEnabled == false {
             editButton.title = "Done"
@@ -38,7 +61,7 @@ class ViewController: UIViewController {
             
             self.navigationItem.leftBarButtonItem = nil
         }else {
-        
+            
             editButton.style = .plain
             editButton.title = "Edit"
             editModeEnabled = false
@@ -46,24 +69,20 @@ class ViewController: UIViewController {
             self.navigationItem.leftBarButtonItem = addButton
         }
         
-         collectionView.reloadData()
-    }
-    
-    func removeCell(_ sender: AnyObject) {
-    //!!!: I don't like this being here, there must be another way
-        currentSoundPad.remove(at: sender.tag)
         collectionView.reloadData()
     }
     
+    // load/save mb use some DEMON
+    func loadASoundPad() {
+        //show list of savedSoundPads, chose1, restore
+    }
     
-    //MARK: - Navigation bar's addButtonFunction
-    
-    @IBAction func addButtonTapped(_ sender: AnyObject) {
-
-        SoundPicker(self).delegate = self
+    func saveCurrentSoundPad() {
+        //save current soundpadState
     }
 }
 
+//MARK: - SoundPickerDelegate
 extension ViewController: SoudPickerDelegate {
     
     func soundPickerDidSelect(_ sound: String?) {
@@ -117,3 +136,4 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
