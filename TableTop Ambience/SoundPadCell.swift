@@ -29,8 +29,10 @@ class SoundPadCell: UICollectionViewCell {
     @IBAction func playStopButtonPressed(_ sender: AnyObject) {
         
         if playStopButton.backgroundImage(for: .normal) == #imageLiteral(resourceName: "Play-96") {
+            
             playStopButton.setBackgroundImage(#imageLiteral(resourceName: "Stop-96"), for: .normal)
         }else {
+            
             playStopButton.setBackgroundImage(#imageLiteral(resourceName: "Play-96"), for: .normal)
         }
         
@@ -38,9 +40,12 @@ class SoundPadCell: UICollectionViewCell {
     }
     
     @IBAction func repeatButtonPressed(_ sender: AnyObject) {
+        
         if repeatButton.backgroundImage(for: .normal) == #imageLiteral(resourceName: "Repeat-96") {
+            
             repeatButton.setBackgroundImage(#imageLiteral(resourceName: "Repeat-96-highlight"), for: .normal)
         }else {
+            
             repeatButton.setBackgroundImage(#imageLiteral(resourceName: "Repeat-96"), for: .normal)
         }
         
@@ -48,12 +53,15 @@ class SoundPadCell: UICollectionViewCell {
     }
     
     @IBAction func volumeSliderValueChanged(_ sender: AnyObject) {
+        
         delegate?.volumeSliderValueChanged(sender)
     }
 }
 
 extension SoundPadCell: SoundFlowDelegate{
+    
     func didStopAudioSession(_ sender: SoundFlow) {
-         playStopButton.setBackgroundImage(#imageLiteral(resourceName: "Play-96"), for: .normal)
+        
+        playStopButton.setBackgroundImage(#imageLiteral(resourceName: "Play-96"), for: .normal)
     }
 }

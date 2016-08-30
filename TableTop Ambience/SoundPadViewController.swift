@@ -28,13 +28,14 @@ class SoundPadViewController: UIViewController {
     
     @IBAction func addButtonTapped(_ sender: AnyObject) {
 
-        SoundPicker(self).delegate = self
+      SoundPicker(self).start()
     }
     
     
     //MARK: - ToolBarItemActions
     
     @IBAction func loadSoundPad(_ sender: AnyObject) {
+        
         loadASoundPad()
     }
     
@@ -55,6 +56,7 @@ extension SoundPadViewController{
     func toogleEditMode() {
         
         if editModeEnabled == false {
+            
             editButton.title = "Done"
             editButton.style = .done
             editModeEnabled = true

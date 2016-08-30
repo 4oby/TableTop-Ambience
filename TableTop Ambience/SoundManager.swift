@@ -12,6 +12,7 @@ let resourcesRootFolder = "Sound"
 let resourcesFileType = "mp3"
 
 enum SoundCategories: String {
+    
     case ambient = "Ambient",
     music   = "Music",
     sfx     = "SFX",
@@ -21,10 +22,12 @@ enum SoundCategories: String {
 }
 
 class SoundManager: NSObject {
+    
     static let sharedInstance = SoundManager()
     var soundList = [[String]]()
     
     override init() {
+        
         super.init()
         self.loadFileList()
     }
@@ -36,6 +39,7 @@ extension SoundManager {
     func loadFileList() {
         
         for category in SoundCategories.allValues {
+            
             let filesFromCurrentCategory = Bundle.main.paths(forResourcesOfType: resourcesFileType,
                                                              inDirectory: resourcesRootFolder + "/" + category.rawValue)
             soundList.append(filesFromCurrentCategory)
@@ -48,6 +52,7 @@ extension SoundManager {
     }
     
     func getSoundListForCategory(number: Int) -> [String]? {
+        
         return soundList[number]
     }
 }

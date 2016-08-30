@@ -35,6 +35,7 @@ struct SoundPadItem {
     }
     
     init(fileAddress: String) { //utility init
+        
         self.fileAddress = fileAddress
         self.icon = ""
         self.name = URL(fileURLWithPath: fileAddress).deletingPathExtension().lastPathComponent
@@ -62,8 +63,9 @@ extension SoundPadItem {
 
 //MARK: - Editing Utility
 extension SoundPadItem {
-
+    
     func setVolume(volume: Float) -> SoundPadItem {
+        
         return SoundPadItem(fileAddress: self.fileAddress,
                             icon: self.icon,
                             name: self.name,
@@ -72,6 +74,7 @@ extension SoundPadItem {
     }
     
     func setAutoRepeat(autoRepeat: Bool) -> SoundPadItem {
+        
         return SoundPadItem(fileAddress: self.fileAddress,
                             icon: self.icon,
                             name: self.name,
