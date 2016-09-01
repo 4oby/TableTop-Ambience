@@ -25,7 +25,7 @@ struct SoundPadItem {
         self.volume = volume
     }
     
-    init(dictionary: Dictionary<String, AnyObject>) {
+    init(dictionary: Dictionary<String, Any>) {
         
         self.fileAddress = dictionary["fileAddress"] as? String ?? ""
         self.icon = dictionary["icon"] as? String ?? ""
