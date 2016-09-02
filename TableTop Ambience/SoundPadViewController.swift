@@ -22,6 +22,7 @@ class SoundPadViewController: UIViewController {
     //MARK: - Navigation bar actions
 
     @IBAction func editButtonTapped(_ sender: AnyObject) {
+        
        toogleEditMode()
     }
 
@@ -39,7 +40,10 @@ class SoundPadViewController: UIViewController {
     }
     
     @IBAction func saveSoundPad(_ sender: AnyObject) {
-
+        
+        if currentSoundPad.count > 0 {
+            saveCurrentSoundPad()
+        }
     }
 }
 
@@ -73,13 +77,37 @@ extension SoundPadViewController {
         collectionView.reloadData()
     }
     
-    // load/save mb use some DEMON
     func loadASoundPad() {
-        //show list of savedSoundPads, chose1, restore
+        
+        SoundPadPicker(self).start()
     }
 
     func saveCurrentSoundPad() {
-        //save current soundpadState
+        
+        let defaultTitle = "Pad #" + String(Date().timeIntervalSince1970)
+        
+        let alertController = UIAlertController(title: nil,
+                                                message: "Save current SoundBoard",
+                                                preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        }
+        alertController.addAction(cancelAction)
+        
+        alertController.addTextField { (textField) in
+            textField.text = defaultTitle
+        }
+        
+        let save = UIAlertAction(title: "Save",
+                                 style: .default) { (action) in
+                                    if let textField = (alertController.textFields?[0]) ?? nil {
+                                        SoundPadManager.sharedInstance.savePad(pad: self.currentSoundPad.map({$0.baseItem}), named: textField.text ?? defaultTitle)
+                                    }
+        }
+        
+        alertController.addAction(save)
+        
+        self.present(alertController, animated: true)
     }
 }
 
@@ -93,6 +121,22 @@ extension SoundPadViewController: SoudPickerDelegate {
     }
 }
 
+//MARK: - SoundPadPickerDelegate
+extension SoundPadViewController: SoundPadPickerDelegate {
+    
+    func soundPadPickerDidSelect(_ padName: String?){
+        if let items = SoundPadManager.sharedInstance.getPad(padName ?? ""){
+            currentSoundPad.removeAll()
+         
+            for item in items {
+             
+                currentSoundPad.append(SoundFlow(baseItem: item))
+                
+            }
+            collectionView.reloadData()
+        }
+    }
+}
 
 //MARK: - CollectionViewDataSource
 extension SoundPadViewController: UICollectionViewDataSource {

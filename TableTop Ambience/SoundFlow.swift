@@ -25,8 +25,11 @@ class SoundFlow: NSObject {
         
         self.baseItem = baseItem
         do{
+            let splitAddress = baseItem.fileAddress.components(separatedBy: "TableTop Ambience.app")
             
-            try self.audioSession = AVAudioPlayer(contentsOf: URL(fileURLWithPath:baseItem.fileAddress))
+            let newAdress = Bundle.main.bundlePath + splitAddress[1]
+            
+            try self.audioSession = AVAudioPlayer(contentsOf: URL(fileURLWithPath: newAdress))
             audioSession.volume = baseItem.volume
         }catch {
             

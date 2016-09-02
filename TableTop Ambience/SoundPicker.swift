@@ -27,9 +27,9 @@ class SoundPicker: NSObject {
         self.delegate = parent as? SoudPickerDelegate
     }
     
-    func start(_ lastSelected: Int=0) {
+    func start(_ lastSelected: Int = 0) {
         
-        stepsLeft-=1
+        stepsLeft -= 1
         preconfigureAlertController()
         
         switch stepsLeft { //???: will need to add an aditional step in case I eventually add a superCategory
@@ -44,7 +44,7 @@ class SoundPicker: NSObject {
         }
     }
     
-    func preconfigureAlertController() {
+   private func preconfigureAlertController() {
         
         alertController = UIAlertController(title: nil,
                                             message: nil,
@@ -57,7 +57,7 @@ class SoundPicker: NSObject {
     }
     
     
-    func showAlertWithItems(items: [String]){
+    private func showAlertWithItems(items: [String]){
         
         for index in 0..<items.count {
             
@@ -80,7 +80,7 @@ class SoundPicker: NSObject {
     }
     
     
-    func sanitaziTitle(title: String) -> String {
+   private func sanitaziTitle(title: String) -> String {
         
         return  URL(fileURLWithPath: title).deletingPathExtension().lastPathComponent
     }

@@ -19,6 +19,7 @@
 		DA936EFF1D6722320047C2BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA936EFD1D6722320047C2BC /* LaunchScreen.storyboard */; };
 		DA93A4F71D7850FF0032E91C /* SoundPadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93A4F61D7850FF0032E91C /* SoundPadManager.swift */; };
 		DA9866BC1D6C67CE00ACFB55 /* SoundPadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9866BB1D6C67CE00ACFB55 /* SoundPadCell.swift */; };
+		DAEDC6011D79AB2F00C37433 /* SoundPadPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDC6001D79AB2F00C37433 /* SoundPadPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DA936F001D6722320047C2BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA93A4F61D7850FF0032E91C /* SoundPadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPadManager.swift; sourceTree = "<group>"; };
 		DA9866BB1D6C67CE00ACFB55 /* SoundPadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPadCell.swift; sourceTree = "<group>"; };
+		DAEDC6001D79AB2F00C37433 /* SoundPadPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPadPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				DA87C38D1D6C895B0082D11F /* SoundPadItem.swift */,
 				DA8242621D6DE6DE00DA47CF /* SoundFlow.swift */,
 				DA5EC1F81D7085C900A759C6 /* SoundPicker.swift */,
+				DAEDC6001D79AB2F00C37433 /* SoundPadPicker.swift */,
 				DA93A4F61D7850FF0032E91C /* SoundPadManager.swift */,
 			);
 			name = "Supporting Files";
@@ -182,6 +185,7 @@
 				DA8242631D6DE6DE00DA47CF /* SoundFlow.swift in Sources */,
 				DA9866BC1D6C67CE00ACFB55 /* SoundPadCell.swift in Sources */,
 				DA5EC1F91D7085C900A759C6 /* SoundPicker.swift in Sources */,
+				DAEDC6011D79AB2F00C37433 /* SoundPadPicker.swift in Sources */,
 				DA87C38E1D6C895B0082D11F /* SoundPadItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

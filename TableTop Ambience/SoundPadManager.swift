@@ -9,24 +9,31 @@
 import Foundation
 
 
-let globalPadListKey = "allPadsAreSavedUnderMe"
+private let globalPadListKey = "allPadsAreSavedUnderMe"
 
 class SoundPadManager: NSObject {
     
     static let sharedInstance = SoundPadManager()
     
     var padList = [String]()
+    
+    override init() {
+        super.init()
+        self.initPadList()
+    }
 }
 
 //MARK: - CRUD
 extension SoundPadManager {
     
     func initPadList() {
+        
         guard let padlist = UserDefaults.standard.array(forKey: globalPadListKey) else { return }
         self.padList = padlist as? [String] ?? [String]()
     }
     
     func savePadList() {
+        
         UserDefaults.standard.setValue(padList, forKey: globalPadListKey)
     }
     
@@ -51,4 +58,25 @@ extension SoundPadManager {
         }
     }
     
+    func removePadNamed( _ name: String) {
+        
+        if padList.contains(name) {
+            
+            padList.removeObject(object: name)
+            UserDefaults.standard.setValue(nil, forKey: name)
+        }
+        
+    }
+    
+}
+
+extension Array where Element: Equatable {
+    // Remove first collection element that is equal to the given `object`:
+    mutating func removeObject(object: Element) {
+        
+        if let index = index(of: object) {
+            
+            remove(at: index)
+        }
+    }
 }
