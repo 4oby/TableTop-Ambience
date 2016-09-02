@@ -18,6 +18,7 @@ class SoundPadManager: NSObject {
     var padList = [String]()
     
     override init() {
+        
         super.init()
         self.initPadList()
     }
@@ -42,7 +43,7 @@ extension SoundPadManager {
         
         if let encodedPads = UserDefaults.standard.array(forKey: named) as? [Dictionary<String, Any>]  {
             
-            return encodedPads.map({SoundPadItem(dictionary: $0)})
+            return encodedPads.map({ SoundPadItem(dictionary: $0) })
         }
         
         return nil
@@ -50,7 +51,7 @@ extension SoundPadManager {
     
     func savePad(pad: [SoundPadItem], named: String) {
         
-        UserDefaults.standard.setValue(pad.map({$0.encode()}), forKey: named)
+        UserDefaults.standard.setValue(pad.map({ $0.encode() }), forKey: named)
         if !padList.contains(named) {
             
             padList.append(named)

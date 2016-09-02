@@ -31,7 +31,7 @@ class SoundPadCell: UICollectionViewCell {
         if playStopButton.backgroundImage(for: .normal) == #imageLiteral(resourceName: "Play-96") {
             
             playStopButton.setBackgroundImage(#imageLiteral(resourceName: "Stop-96"), for: .normal)
-        }else {
+        } else {
             
             playStopButton.setBackgroundImage(#imageLiteral(resourceName: "Play-96"), for: .normal)
         }
@@ -44,7 +44,7 @@ class SoundPadCell: UICollectionViewCell {
         if repeatButton.backgroundImage(for: .normal) == #imageLiteral(resourceName: "Repeat-96") {
             
             repeatButton.setBackgroundImage(#imageLiteral(resourceName: "Repeat-96-highlight"), for: .normal)
-        }else {
+        } else {
             
             repeatButton.setBackgroundImage(#imageLiteral(resourceName: "Repeat-96"), for: .normal)
         }
@@ -58,7 +58,7 @@ class SoundPadCell: UICollectionViewCell {
     }
 }
 
-extension SoundPadCell: SoundFlowDelegate{
+extension SoundPadCell: SoundFlowDelegate {
     
     func didStopAudioSession(_ sender: SoundFlow) {
         

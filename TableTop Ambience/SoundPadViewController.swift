@@ -42,6 +42,7 @@ class SoundPadViewController: UIViewController {
     @IBAction func saveSoundPad(_ sender: AnyObject) {
         
         if currentSoundPad.count > 0 {
+            
             saveCurrentSoundPad()
         }
     }
@@ -90,8 +91,8 @@ extension SoundPadViewController {
                                                 message: "Save current SoundBoard",
                                                 preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in }
+        
         alertController.addAction(cancelAction)
         
         alertController.addTextField { (textField) in
@@ -100,7 +101,9 @@ extension SoundPadViewController {
         
         let save = UIAlertAction(title: "Save",
                                  style: .default) { (action) in
+                                    
                                     if let textField = (alertController.textFields?[0]) ?? nil {
+                                        
                                         SoundPadManager.sharedInstance.savePad(pad: self.currentSoundPad.map({$0.baseItem}), named: textField.text ?? defaultTitle)
                                     }
         }
@@ -124,8 +127,9 @@ extension SoundPadViewController: SoudPickerDelegate {
 //MARK: - SoundPadPickerDelegate
 extension SoundPadViewController: SoundPadPickerDelegate {
     
-    func soundPadPickerDidSelect(_ padName: String?){
-        if let items = SoundPadManager.sharedInstance.getPad(padName ?? ""){
+    func soundPadPickerDidSelect(_ padName: String?) {
+        if let items = SoundPadManager.sharedInstance.getPad(padName ?? "") {
+            
             currentSoundPad.removeAll()
          
             for item in items {
@@ -133,6 +137,7 @@ extension SoundPadViewController: SoundPadPickerDelegate {
                 currentSoundPad.append(SoundFlow(baseItem: item))
                 
             }
+            
             collectionView.reloadData()
         }
     }

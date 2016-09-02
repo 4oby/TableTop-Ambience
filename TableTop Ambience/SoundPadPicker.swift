@@ -45,7 +45,7 @@ class SoundPadPicker: NSObject {
     }
     
     
-   private func showAlertWithItems(items: [String]){
+   private func showAlertWithItems(items: [String]) {
         
         for index in 0..<items.count {
             

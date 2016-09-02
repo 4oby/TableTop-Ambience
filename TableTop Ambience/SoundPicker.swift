@@ -22,6 +22,7 @@ class SoundPicker: NSObject {
     var alertController: UIAlertController?
     
     init(_ parent: UIViewController) {
+        
         super.init()
         self.parent = parent
         self.delegate = parent as? SoudPickerDelegate
@@ -35,7 +36,7 @@ class SoundPicker: NSObject {
         switch stepsLeft { //???: will need to add an aditional step in case I eventually add a superCategory
             
         case 1:
-            showAlertWithItems(items: SoundCategories.allValues.map({$0.rawValue}))
+            showAlertWithItems(items: SoundCategories.allValues.map({ $0.rawValue }))
             
         case 0:
             showAlertWithItems(items: SoundManager.sharedInstance.getSoundListForCategory(number: lastSelected) ?? [""])
@@ -57,17 +58,18 @@ class SoundPicker: NSObject {
     }
     
     
-    private func showAlertWithItems(items: [String]){
+    private func showAlertWithItems(items: [String]) {
         
         for index in 0..<items.count {
             
             let action = UIAlertAction(title: stepsLeft != 0 ? items[index] : sanitaziTitle(title: items[index]),
                                        style: .default,
                                        handler: { (action) in
+                                        
                                         if self.stepsLeft > 0 {
                                             
                                             self.start(index)
-                                        }else {
+                                        } else {
                                             
                                             self.delegate?.soundPickerDidSelect(items[index])
                                         }
