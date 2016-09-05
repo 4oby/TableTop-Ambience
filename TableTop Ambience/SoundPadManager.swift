@@ -49,14 +49,18 @@ extension SoundPadManager {
         return nil
     }
     
-    func savePad(pad: [SoundPadItem], named: String) {
+    func savePad(pad: [SoundPadItem], named: String, append: Bool = true) {
         
-        UserDefaults.standard.setValue(pad.map({ $0.encode() }), forKey: named)
-        if !padList.contains(named) {
+        var sureName = named
             
-            padList.append(named)
-            savePadList()
-        }
+            if append {
+                sureName = ensureEligibleName(named)
+                padList.append(sureName)
+                savePadList()
+            }
+            
+            UserDefaults.standard.setValue(pad.map({ $0.encode() }), forKey: sureName)
+
     }
     
     func removePadNamed( _ name: String) {
@@ -65,10 +69,41 @@ extension SoundPadManager {
             
             padList.removeObject(object: name)
             UserDefaults.standard.setValue(nil, forKey: name)
+            savePadList()
         }
-        
     }
     
+    func removePadAtIndex(_ index: Int) {
+        
+        UserDefaults.standard.set(nil, forKey: padList[index])
+        padList.remove(at: index)
+        savePadList()
+    }
+    
+    func renamePad(index: Int, newPadName: String) {
+        
+        let oldPadName = padList[index]
+        
+        if let pad = getPad(oldPadName) {
+
+            removePadAtIndex(index)
+            
+            let eligibleNewName = ensureEligibleName(newPadName)
+            
+            savePad(pad: pad, named: eligibleNewName, append: false)
+            padList.insert(eligibleNewName, at: index)
+            savePadList()
+        }
+    }
+    
+    func ensureEligibleName(_ name: String) -> String {
+        if padList.contains(name) {
+            return  ensureEligibleName(name + "Copy")
+        }else {
+            return name
+        }
+    
+    }
 }
 
 extension Array where Element: Equatable {
