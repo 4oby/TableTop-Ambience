@@ -8,6 +8,7 @@
 
 import UIKit
 
+private let loadPadSegueID = "loadSoundPad"
 
 class SoundPadViewController: UIViewController {
 
@@ -18,7 +19,7 @@ class SoundPadViewController: UIViewController {
     var currentSoundPad = [SoundFlow]()
     var editModeEnabled = false
 
-
+    
     //MARK: - Navigation bar actions
 
     @IBAction func editButtonTapped(_ sender: AnyObject) {
@@ -33,11 +34,6 @@ class SoundPadViewController: UIViewController {
     
     
     //MARK: - ToolBarItemActions
-    
-    @IBAction func loadSoundPad(_ sender: AnyObject) {
-        
-        loadASoundPad()
-    }
     
     @IBAction func saveSoundPad(_ sender: AnyObject) {
         
@@ -77,11 +73,6 @@ extension SoundPadViewController {
 
         collectionView.reloadData()
     }
-    
-    func loadASoundPad() {
-        
-        SoundPadPicker(self).start()
-    }
 
     func saveCurrentSoundPad() {
         
@@ -91,7 +82,7 @@ extension SoundPadViewController {
                                                 message: "Save current SoundBoard",
                                                 preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         alertController.addAction(cancelAction)
         
@@ -124,25 +115,6 @@ extension SoundPadViewController: SoudPickerDelegate {
     }
 }
 
-//MARK: - SoundPadPickerDelegate
-extension SoundPadViewController: SoundPadPickerDelegate {
-    
-    func soundPadPickerDidSelect(_ padName: String?) {
-        if let items = SoundPadManager.sharedInstance.getPad(padName ?? "") {
-            
-            currentSoundPad.removeAll()
-         
-            for item in items {
-             
-                currentSoundPad.append(SoundFlow(baseItem: item))
-                
-            }
-            
-            collectionView.reloadData()
-        }
-    }
-}
-
 //MARK: - CollectionViewDataSource
 extension SoundPadViewController: UICollectionViewDataSource {
 
@@ -166,7 +138,7 @@ extension SoundPadViewController: UICollectionViewDataSource {
         currentSoundPad[indexPath.row].delegate = cell
 
         if currentSoundPad[indexPath.row].baseItem.autoRepeat {
-            //FIXME: find a better solution, changing cells here sucks
+            
             cell.repeatButton.setBackgroundImage(#imageLiteral(resourceName: "Repeat-96-highlight"), for: .normal)
         }
         
@@ -186,4 +158,34 @@ extension SoundPadViewController: UICollectionViewDataSource {
             return cell
         }
 }
+
+
+//MARK - pickerDelegate
+extension SoundPadViewController: SoundPadPickerDelegate {
+    
+    func soundPadPickerDidSelect(_ padName: String?) {
+        
+        if let items = SoundPadManager.sharedInstance.getPad(padName ?? "") {
+            
+            currentSoundPad.removeAll()
+            
+            for item in items {
+                
+                currentSoundPad.append(SoundFlow(baseItem: item))
+            }
+            
+            collectionView.reloadData()
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == loadPadSegueID && segue.destination is SoundPadPicker {
+           
+            (segue.destination as? SoundPadPicker)?.delegate = self
+            
+        }
+    }
+}
+
 

@@ -50,10 +50,8 @@ class SoundPicker: NSObject {
         alertController = UIAlertController(title: nil,
                                             message: nil,
                                             preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .cancel) { (action) in
-        }
-        
+        let cancelAction = UIAlertAction(title: "Cancel",style: .cancel)
+    
         alertController?.addAction(cancelAction)
     }
     
