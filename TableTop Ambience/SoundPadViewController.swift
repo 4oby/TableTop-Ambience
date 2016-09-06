@@ -130,7 +130,7 @@ extension SoundPadViewController: UICollectionViewDataSource {
 }
 
 
-//MARK - pickerDelegate
+//MARK - SoundPadPickerDelegate
 extension SoundPadViewController: SoundPadPickerDelegate {
     func soundPadPickerDidSelect(_ padName: String?) {
         if let items = SoundPadManager.sharedInstance.getPad(padName ?? "") {
