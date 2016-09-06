@@ -8,26 +8,24 @@
 
 import Foundation
 
-let resourcesRootFolder = "Sound"
-let resourcesFileType = "mp3"
+private let resourcesRootFolder = "Sound"
+private let resourcesFileType = "mp3"
 
 enum SoundCategories: String {
-    
     case ambient = "Ambient",
-    music   = "Music",
-    sfx     = "SFX",
-    special = "Special"
+         music   = "Music",
+         sfx     = "SFX",
+         special = "Special"
     
     static let allValues = [ambient, music, sfx, special]
 }
 
-class SoundManager: NSObject {
+final class SoundManager: NSObject {
     
     static let sharedInstance = SoundManager()
     var soundList = [[String]]()
     
     override init() {
-        
         super.init()
         self.loadFileList()
     }
@@ -35,11 +33,8 @@ class SoundManager: NSObject {
 
 //MARK: - Init the soundList
 extension SoundManager {
-    
     func loadFileList() {
-        
         for category in SoundCategories.allValues {
-            
             let filesFromCurrentCategory = Bundle.main.paths(forResourcesOfType: resourcesFileType,
                                                              inDirectory: resourcesRootFolder + "/" + category.rawValue)
             soundList.append(filesFromCurrentCategory)
@@ -47,12 +42,11 @@ extension SoundManager {
     }
     
     func getSoundListForCategory(category: SoundCategories) -> [String]? {
-        
         return soundList[category.hashValue]
     }
     
     func getSoundListForCategory(number: Int) -> [String]? {
-        
         return soundList[number]
     }
 }
+

@@ -8,6 +8,14 @@
 
 import Foundation
 
+private enum EncodeDictionaryAttributes: String {
+    case fileAddress = "fileAddress"
+    case icon        = "icon"
+    case name        = "name"
+    case autoRepeat  = "autoRepeat"
+    case volume      = "volume"
+}
+
 struct SoundPadItem {
     
     let fileAddress: String
@@ -17,7 +25,6 @@ struct SoundPadItem {
     let volume: Float
     
     init(fileAddress: String, icon: String, name: String, autoRepeat: Bool = false, volume: Float = 0.5) {
-        
         self.fileAddress = fileAddress
         self.icon = icon
         self.name = name
@@ -26,36 +33,31 @@ struct SoundPadItem {
     }
     
     init(dictionary: Dictionary<String, Any>) {
-        
-        self.fileAddress = dictionary["fileAddress"] as? String ?? ""
-        self.icon = dictionary["icon"] as? String ?? ""
-        self.name = dictionary["name"] as? String ?? ""
-        self.autoRepeat = dictionary["autoRepeat"] as? Bool ?? false
-        self.volume = dictionary["volume"] as? Float ?? 0.5
+        self.fileAddress = dictionary[EncodeDictionaryAttributes.fileAddress.rawValue] as? String ?? ""
+        self.icon = dictionary[EncodeDictionaryAttributes.icon.rawValue] as? String ?? ""
+        self.name = dictionary[EncodeDictionaryAttributes.name.rawValue] as? String ?? ""
+        self.autoRepeat = dictionary[EncodeDictionaryAttributes.autoRepeat.rawValue] as? Bool ?? false
+        self.volume = dictionary[EncodeDictionaryAttributes.volume.rawValue] as? Float ?? 0.5
     }
     
     init(fileAddress: String) { //utility init
-        
         self.fileAddress = fileAddress
         self.icon = ""
         self.name = URL(fileURLWithPath: fileAddress).deletingPathExtension().lastPathComponent
         self.autoRepeat = false
         self.volume = 0.5
     }
-    
 }
 
 //MARK: - Saving Utility
 extension SoundPadItem {
-    
     func encode() -> Dictionary<String, Any> {
-        
         var dictionary = Dictionary<String, Any>()
-        dictionary["fileAddress"] = self.fileAddress
-        dictionary["icon"] = self.icon
-        dictionary["name"] = self.name
-        dictionary["autoRepeat"] = self.autoRepeat
-        dictionary["volume"] = self.volume
+        dictionary[EncodeDictionaryAttributes.fileAddress.rawValue] = self.fileAddress
+        dictionary[EncodeDictionaryAttributes.icon.rawValue] = self.icon
+        dictionary[EncodeDictionaryAttributes.name.rawValue] = self.name
+        dictionary[EncodeDictionaryAttributes.autoRepeat.rawValue] = self.autoRepeat
+        dictionary[EncodeDictionaryAttributes.volume.rawValue] = self.volume
         return dictionary
     }
 }
@@ -63,9 +65,7 @@ extension SoundPadItem {
 
 //MARK: - Editing Utility
 extension SoundPadItem {
-    
     func setVolume(volume: Float) -> SoundPadItem {
-        
         return SoundPadItem(fileAddress: self.fileAddress,
                             icon: self.icon,
                             name: self.name,
@@ -74,7 +74,6 @@ extension SoundPadItem {
     }
     
     func setAutoRepeat(autoRepeat: Bool) -> SoundPadItem {
-        
         return SoundPadItem(fileAddress: self.fileAddress,
                             icon: self.icon,
                             name: self.name,
